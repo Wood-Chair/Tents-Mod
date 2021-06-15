@@ -10,7 +10,7 @@ func:function()
 {
 		new G.Unit({
 		name:'tent',
-		desc:'@People can sleep here',
+		desc:'@provides 1 [housing]<>A small leather tent for 1 person.',
 		icon:[0,0,'spicySheet'],
 		cost:{'leather':10},
 		effects:[
@@ -21,7 +21,7 @@ func:function()
 	});
 	new G.Tech({
 		name:'tent making',
-		desc:'@You can now make tents.',
+		desc:'@You can now make [tent]s out of leather.',
 		icon:[0,0,'spicySheet'],
 		cost:{'insight':15},
 		req:{'sedentism':true},
