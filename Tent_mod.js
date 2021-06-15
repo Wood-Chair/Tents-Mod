@@ -12,7 +12,7 @@ func:function()
 		name:'tent',
 		desc:'@People can sleep here',
 		icon:[0,0,'spicySheet'],
-		cost:{'food':50},
+		cost:{'leather':20},
 		effects:[
 			{type:'provide',what:{'housing':1}}
 		],
