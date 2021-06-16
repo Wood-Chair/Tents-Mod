@@ -60,7 +60,7 @@ func:function()
 			{type:'convert',from:{'adult':1},into:{'corpse':1},every:30,mode:'kill'},
 		],
 		category:'housing',
-		req:{'carving':true,'spears':true},
+		req:{'murder':true},
 	});
 		new G.Tech({
 		name:'murder',
