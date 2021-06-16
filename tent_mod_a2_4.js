@@ -57,7 +57,6 @@ func:function()
 			'kill':{name:'Commit murder',icon:[5,4],desc:'Just good old fashioned murder.'},
 		},
 		effects:[
-			{type:'provide',what:{'housing':1}},
 			{type:'convert',from:{'adult':1},into:{'corpse':1},every:30,mode:'kill'},
 		],
 		category:'housing',
