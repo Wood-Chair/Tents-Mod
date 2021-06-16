@@ -63,7 +63,7 @@ func:function()
 		],
 		category:'housing',
 		req:{'carving':true},
-	//});
+	});
   
 }
 });
