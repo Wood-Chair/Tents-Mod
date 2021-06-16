@@ -40,9 +40,9 @@ func:function()
 	new G.Trait({
 		name:'herb-eating',
 		desc:'@your people are no longer unhappy when eating [herb]s',
-		icon:[8,11,22,1],
-		chance:5,
-		req:{'insects as food':'on'},
+		icon:[4,6,22,1],
+		chance:10,
+		req:{'plant lore':true},
 		effects:[
 			{type:'function',func:function(){G.getDict('herb').turnToByContext['eating']['happiness']=0.03;}},
 		],
