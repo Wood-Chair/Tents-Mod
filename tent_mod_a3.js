@@ -37,5 +37,17 @@ func:function()
 			//{type:'function',func:function(){G.getDict('hot sauce').turnToByContext['eat']['happiness']=0.2;}},//this is a custom function executed when we gain the trait
 		//],
 	//});
+	new G.Trait({
+		name:'herb-eating',
+		desc:'@your people are no longer unhappy when eating [herb]s',
+		icon:[8,11,22,1],
+		chance:5,
+		req:{'insects as food':'on'},
+		effects:[
+			{type:'function',func:function(){G.getDict('herb').turnToByContext['eating']['happiness']=0.03;}},
+		],
+	});
+  
+  
 }
 });
