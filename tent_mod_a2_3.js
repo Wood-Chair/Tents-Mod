@@ -51,7 +51,6 @@ func:function()
 		name:'murderer',
 		desc:'@Kills people<>Dont hire these! All they do is murder!.',
 		icon:[18,1],
-		cost:{'leather':10},
 		use:{'worker':1},
 		staff:{'stone weapons':1},
 		modes:{
