@@ -60,7 +60,14 @@ func:function()
 			{type:'convert',from:{'adult':1},into:{'corpse':1},every:30,mode:'kill'},
 		],
 		category:'housing',
-		req:{'carving':true},
+		req:{'carving':true,'spears':true},
+	});
+		new G.Tech({
+		name:'murder',
+		desc:'@Unlocks [murderer] unit<>So, you have [stone weapons, weapons] now, why not use those on people?',
+		icon:[18,1],
+		cost:{'insight':15},
+		req:{'spears':true},
 	});
   
 }
