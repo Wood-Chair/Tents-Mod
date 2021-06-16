@@ -47,22 +47,22 @@ func:function()
 			{type:'function',func:function(){G.getDict('herb').turnToByContext['eating']['happiness']=0.03;}},
 		],
 	});
-  	//	new G.Unit({
-	//	name:'murderer',
-	//	desc:'@Kills people<>Dont hire these! All they do is murder!.',
-	//	icon:[18,1],
-	//	cost:{'leather':10},
-	//	use:{'worker':1},
-	//	staff:{'stone weapons':1},
-	//	modes:{
-	//		'kill':{name:'Commit murder',icon:[5,4],desc:'Just good old fashioned murder.'},
-	//	},
-	//	effects:[
-	//		{type:'provide',what:{'housing':1}}
-	//		{type:'convert',from:{'adult':1},into:{'corpse':1},every:30,mode:'kill'},
-	//	],
-	//	category:'housing',
-	//	req:{'carving':true},
+  		new G.Unit({
+		name:'murderer',
+		desc:'@Kills people<>Dont hire these! All they do is murder!.',
+		icon:[18,1],
+		cost:{'leather':10},
+		use:{'worker':1},
+		staff:{'stone weapons':1},
+		modes:{
+			'kill':{name:'Commit murder',icon:[5,4],desc:'Just good old fashioned murder.'},
+		},
+		effects:[
+			{type:'provide',what:{'housing':1}},
+			{type:'convert',from:{'adult':1},into:{'corpse':1},every:30,mode:'kill'},
+		],
+		category:'housing',
+		req:{'carving':true},
 	//});
   
 }
