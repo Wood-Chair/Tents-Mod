@@ -43,6 +43,7 @@ func:function()
 		icon:[18,1],
 		use:{'worker':1},
 		staff:{'stone weapons':1},
+		gizmos:true,
 		modes:{
 			'kill':{name:'Commit murder',icon:[5,4],desc:'Just good old fashioned murder.'},
 			'cannibal':{name:'Cannabalize',icon:[6,9],desc:'Convert.',req:{'cannabalism':true}},
