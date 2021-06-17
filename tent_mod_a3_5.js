@@ -46,7 +46,7 @@ func:function()
 		gizmos:true,
 		modes:{
 			'kill':{name:'Commit murder',icon:[5,4],desc:'Just good old fashioned murder.'},
-			'cannibal':{name:'Cannabalize',icon:[6,9],desc:'Convert.',req:{'cannabalism':true}},
+			'cannibal':{name:'Cannabalize',icon:[6,9],desc:'Turn [corpse]s into meat! Finally, a use for those things...',req:{'cannabalism':true}},
 		},
 		effects:[
 			{type:'convert',from:{'adult':1},into:{'corpse':1},every:30,mode:'kill'},
