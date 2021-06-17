@@ -68,13 +68,5 @@ func:function()
 		cost:{'insight':10},
 		req:{'murder':true,'cooking':true},
 	});
-	//	new G.Tech({
-	//	name:'cremation',
-	//	desc:'@Allows [firekeeper]s to burn corpses.<>This doesnt create any useful biproducts, but removes bodies at a faster rate.',
-	//	icon:[27,7],
-	//	cost:{'insight':10},
-	//	req:{'murder':true,'cooking':true},
-	//});
-  
 }
 });
