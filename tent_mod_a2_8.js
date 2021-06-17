@@ -26,17 +26,7 @@ func:function()
 		cost:{'insight':15},
 		req:{'sedentism':true,'leather-working':true},
 	});
-	//Finally, we add a trait that amplifies the benefits of consuming hot sauce; it will take on average 20 years to appear once the conditions (knowing the "Hot sauce preparing" tech) is fulfilled.
-	//new G.Trait({
-		//name:'tent sharing',
-		//desc:'@your people will now share tents with one another, allowing tents to provide more housing.',
-		//icon:[0,0,'spicySheet'],
-		//chance:3,
-		//req:{'tent making':true},
-		//effects:[
-			//{type:'function',func:function(){G.getDict('hot sauce').turnToByContext['eat']['happiness']=0.2;}},//this is a custom function executed when we gain the trait
-		//],
-	//});
+	
 	new G.Trait({
 		name:'herb-eating',
 		desc:'@Your people are no longer unhappy when eating [herb]s',
@@ -46,6 +36,7 @@ func:function()
 		effects:[
 			{type:'function',func:function(){G.getDict('herb').turnToByContext['eating']['happiness']=0.03;}},
 		],
+
 	});
   		new G.Unit({
 		name:'murderer',
