@@ -64,9 +64,9 @@ func:function()
 	});
 		new G.Tech({
 		name:'murder',
-		desc:'@Unlocks [murderer] unit<>So, you have [stone weapons, weapons] now, why not use those on people?',
+		desc:'@Unlocks [murderer] unit<>So, you have [stone weapons, Weapons] now, why not use those on people?',
 		icon:[18,1],
-		cost:{'insight':15},
+		cost:{'insight':5},
 		req:{'spears':true},
 	});
   
