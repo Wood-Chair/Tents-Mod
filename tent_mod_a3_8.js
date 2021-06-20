@@ -5,7 +5,7 @@ desc:'A mod that adds tents +more!. Disclaimer:"More!" may include cannabalism. 
 engineVersion:1,
 manifest:0,
 requires:['Default dataset*'],
-sheets:{'spicySheet':'https://github.com/Wood-Chair/Tents-Mod/blob/e161551a0ca543ca094b0f8147bcb4427b90d2a9/Untitled.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
+sheets:{'spicySheet':'https://github.com/Wood-Chair/Tents-Mod/blob/e936e7f043cc2e842480c6bb3315ce19d4b6b137/Untitled.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
 func:function()
 {
 		new G.Unit({
