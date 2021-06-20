@@ -14,7 +14,7 @@ func:function()
 		icon:[9,2],
 		cost:{'leather':10},
 		effects:[
-			{type:'provide',what:{'housing':1}}
+			{type:'provide',what:{'housing':1}},
 		],
 		category:'housing',
 		req:{'tent making':true},
