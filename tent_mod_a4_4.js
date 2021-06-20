@@ -55,14 +55,14 @@ func:function()
 		new G.Trait({
 		name:'belief in a benevolent god',
 		desc:'@Unlocks new research<>Your people have adopted the idea of a benevolent god. This unlocks new research into further religous ideas.',
-		icon:[26,8,'spicySheet'],
+		icon:[26,8],
 		chance:15,
 		req:{'belief in the afterlife':true, 'belief in a malevolent god':false},
 	});
 		new G.Trait({
 		name:'belief in a malevolent god',
 		desc:'@Unlocks new research<>Your people have adopted the idea of a malevolent god. This unlocks new research into further religous ideas.',
-		icon:[27,8,'spicySheet'],
+		icon:[27,8],
 		chance:15,
 		req:{'belief in the afterlife':true, 'belief in a benevolent god':false},
 	});
