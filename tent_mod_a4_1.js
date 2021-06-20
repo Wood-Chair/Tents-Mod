@@ -5,7 +5,7 @@ desc:'A mod that adds tents +more!. Disclaimer:"More!" may include cannabalism. 
 engineVersion:1,
 manifest:0,
 requires:['Default dataset*'],
-sheets:{'spicySheet':'https://github.com/Wood-Chair/Tents-Mod/blob/e936e7f043cc2e842480c6bb3315ce19d4b6b137/Untitled.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
+sheets:{'spicySheet':'https://github.com/Wood-Chair/Tents-Mod/blob/5f30bc0efdcf3c3bb8471417d5614c1cac7a2316/YA.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
 func:function()
 {
 		new G.Unit({
@@ -19,7 +19,7 @@ func:function()
 		category:'housing',
 		req:{'tent making':true},
 	});
-	new G.Tech({
+		new G.Tech({
 		name:'tent making',
 		desc:'@You can now make [tent]s out of leather.',
 		icon:[12,4,23,1],
@@ -27,7 +27,7 @@ func:function()
 		req:{'sedentism':true,'leather-working':true},
 	});
 	
-	new G.Trait({
+		new G.Trait({
 		name:'herb eating',
 		desc:'@Your people are no longer unhappy when eating [herb]s',
 		icon:[4,6,22,1],
@@ -37,9 +37,9 @@ func:function()
 			{type:'function',func:function(){G.getDict('herb').turnToByContext['eating']['happiness']=0.03;}},
 		],
 	});
-	new G.Trait({
+		new G.Trait({
 		name:'cooked foods',
-		desc:'@Your people are used to eating [cooked meat, cooked] foods. They gain more happiness from [cooked meat, cooked] foods, but lose more from [meat, raw] meats.',
+		desc:'Your people are used to eating [cooked meat, cooked] foods. They gain more happiness from [cooked meat, cooked] foods, but lose more from [meat, raw] meats.',
 		icon:[6,7,22,1],
 		cost:{'cooked meat':20},
 		chance:10,
@@ -49,6 +49,25 @@ func:function()
 			{type:'function',func:function(){G.getDict('meat').turnToByContext['eating']['happiness']=-0.01;}},
 		],
 	});
+	
+	
+	
+		new G.Trait({
+		name:'belief in a benevolent god',
+		desc:'@Unlocks new research<>Your people have adopted the idea of a benevolent god. This unlocks new research into further religous ideas.',
+		icon:[26,8,'spicySheet'],
+		chance:15,
+		req:{'belief in the afterlife':true, 'belief in a malevolent god':false},
+	});
+		new G.Trait({
+		name:'belief in a malevolent god',
+		desc:'@Unlocks new research<>Your people have adopted the idea of a malevolent god. This unlocks new research into further religous ideas.',
+		icon:[27,8,'spicySheet'],
+		chance:15,
+		req:{'belief in the afterlife':true, 'belief in a benevolent god':false},
+	});
+	
+	
 	
   		new G.Unit({
 		name:'murderer',
