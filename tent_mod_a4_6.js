@@ -141,5 +141,28 @@ func:function()
 		//priority:5,
 	//});
 	
+	
+	
+	new G.Unit({
+		name:'metropolis',
+		desc:'@Provides 15000 housing.<>A city, to house the growing population of your empire. A true monument to the achievements of your people.',
+		wonder:'metropolis',
+		icon:[1,14],
+		wideIcon:[0,14],
+		cost:{'basic building materials':2000},
+		costPerStep:{'basic building materials':500,'precious building materials':20},
+		steps:100,
+		messageOnStart:'You have begun the contstruction of a metropolis. The first building in a grand city, a tower to mark the origin and center of this place, stands over you, and, as you marvel at its height, the sun sets upon the first day of construction. The first of many, many days.',
+		finalStepCost:{'precious building materials':300, 'statuette':1, },
+		finalStepDesc:'As a crown to the metropolis, a small temple is constructed in the heart of the city. An inscription carved upon it reads, "A city made by the people, stands tall, but only in its servitude to the people. As should a ruler."',
+		use:{'land':1000},
+		//require:{'worker':10,'stone tools':10},
+		effects:[
+			{type:'provide',what:{'housing':15000}},
+		],
+		req:{'carving':true},
+		category:'wonder',
+	});
+	
 }
 });
