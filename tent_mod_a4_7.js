@@ -160,7 +160,7 @@ func:function()
 		effects:[
 			{type:'provide',what:{'housing':15000}},
 		],
-		req:{'carving':true},
+		req:{'city planning':true},
 		category:'wonder',
 	});
 	
