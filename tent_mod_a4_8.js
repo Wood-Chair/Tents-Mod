@@ -53,18 +53,41 @@ func:function()
 	
 	
 		new G.Trait({
-		name:'belief in a benevolent god',
-		desc:'@Unlocks new research<>Your people have adopted the idea of a benevolent god. This unlocks new research into further religous ideas.',
+		name:'belief in a benevolent pantheon',
+		desc:'@Unlocks new research<>Your people have adopted the idea of a benevolent pantheon. This unlocks new research into further religous ideas.',
 		icon:[26,8],
 		chance:15,
-		req:{'belief in the afterlife':true, 'belief in a malevolent god':false},
+		req:{'belief in the afterlife':true, 'belief in a malevolent pantheon':false},
 	});
 		new G.Trait({
-		name:'belief in a malevolent god',
-		desc:'@Unlocks new research<>Your people have adopted the idea of a malevolent god. This unlocks new research into further religous ideas.',
+		name:'belief in a malevolent pantheon',
+		desc:'@Unlocks new research<>Your people have adopted the idea of a malevolent pantheon. This unlocks new research into further religous ideas.',
 		icon:[27,8],
 		chance:15,
-		req:{'belief in the afterlife':true, 'belief in a benevolent god':false},
+		req:{'belief in the afterlife':true, 'belief in a benevolent pantheon':false},
+	});
+	
+	
+	new G.Tech({
+		name:'appeasement of the gods',
+		desc:'@Unlocks [appeasement] meter@Unlocks [ritualist]<>Your people decide to sacrifice various things in order to appease the gods. Keeping their gods appeased will ease your peoples worries, and may prevent far worse things...',
+		icon:[12,4,23,1],
+		cost:{'insight':15},
+		req:{'belief in a malevolent god':true},
+	});
+	new G.Unit({
+		name:'ritualist',
+		desc:'@Sacrifices items to the gods, generating [appeasement] and [happiness] every now and then.<>[ritualist]s appease the gods by granting them regular sacrifices.',
+		icon:[15,2],
+		cost:{},
+		use:{'worker':1},
+		upkeep:{'coin':0.2},
+		effects:[
+			{type:'gather',what:{'appeasement':1,'happiness':0.2}},
+			{type:'gather',what:{'appeasement':0.5},req:{'symbolism':true}}
+		],
+		req:{'appeasement of the gods':true},
+		category:'spiritual',
 	});
 	
 	
@@ -143,26 +166,26 @@ func:function()
 	
 	
 	
-	new G.Unit({
-		name:'metropolis',
-		desc:'@Provides 15000 housing.<>A city, to house the growing population of your empire. A true monument to the achievements of your people.',
-		wonder:'metropolis',
-		icon:[1,14],
-		wideIcon:[0,14],
-		cost:{'basic building materials':2000},
-		costPerStep:{'basic building materials':500,'precious building materials':20},
-		steps:100,
-		messageOnStart:'You have begun the contstruction of a metropolis. The first building in a grand city, a tower to mark the origin and center of this place, stands over you, and, as you marvel at its height, the sun sets upon the first day of construction. The first of many, many days.',
-		finalStepCost:{'precious building materials':300, 'statuette':1, },
-		finalStepDesc:'As a crown to the metropolis, a small temple is constructed in the heart of the city. An inscription carved upon it reads, "A city made by the people, stands tall, but only in its servitude to the people. As should a ruler."',
-		use:{'land':1000},
+	//new G.Unit({
+		//name:'metropolis',
+		//desc:'@Provides 15000 housing.<>A city, to house the growing population of your empire. A true monument to the achievements of your people.',
+		//wonder:'metropolis',
+		//icon:[1,14],
+		//wideIcon:[0,14],
+		//cost:{'basic building materials':2000},
+		//costPerStep:{'basic building materials':500,'precious building materials':20},
+		//steps:100,
+		//messageOnStart:'You have begun the contstruction of a metropolis. The first building in a grand city, a tower to mark the origin and center of this place, stands over you, and, as you marvel at its height, the sun sets upon the first day of construction. The first of many, many days.',
+		//finalStepCost:{'precious building materials':300, 'statuette':1, },
+		//finalStepDesc:'As a crown to the metropolis, a small temple is constructed in the heart of the city. An inscription carved upon it reads, "A city made by the people, stands tall, but only in its servitude to the people. As should a ruler."',
+		//use:{'land':1000},
 		//require:{'worker':10,'stone tools':10},
-		effects:[
-			{type:'provide',what:{'housing':15000}},
-		],
-		req:{'city planning':true},
-		category:'wonder',
-	});
+		//effects:[
+			//{type:'provide',what:{'housing':15000}},
+		//],
+		//req:{'city planning':true},
+		//category:'wonder',
+	//});
 	
 }
 });
