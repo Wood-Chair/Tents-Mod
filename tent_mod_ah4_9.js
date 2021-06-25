@@ -82,67 +82,57 @@ func:function()
 		req:{'murder':true,'cooking':true},
 	});
 	
-	//new G.Unit({
-		//name:'barn',
-		//desc:'@provides 4000 [food storage]<>A large wooden building for storing food. A worker manages the grain to prevent rot.',
-		//icon:[24,4],
-		//cost:{'basic building materials':500},
-		//use:{'land':2},
-		//staff:{'worker':1},
-		//require:{'worker':2,'stone tools':2},
-		//effects:[
-		//	{type:'provide',what:{'added food storage':4000}},
-		//	{type:'waste',chance:0.001/1000}
-		//],
-		//req:{'stockpiling':true,'carpentry':true},
-		//category:'storage',
-	//});
-	//new G.Tech({
-		//name:'medical science',
-		//desc:'@Unlocks [hospital] unit<>So, you have [stone weapons, Weapons] now, why not use those on people?',
-		//icon:[18,1],
-		//cost:{'insight':5},
-		//req:{'spears':true},
-	//});
-	//new G.Unit({
-		//name:'hospital',
-		//desc:'@Heals the [sick] and the [wounded] faster than a [healer] using more complex medicine.<>Hospitals gather workers together to heal and research.',
-		//icon:[23,3],
-		//cost:{'basic building materials':500},
-		//use:{'worker':3},
-		//staff:{'stone tools':3},
-		//upkeep:{'coin':0.2},
-		//effects:[
-			//{type:'convert',from:{'sick':1,'herb':2.5},into:{'adult':1},chance:4/5,every:3},
-			//{type:'convert',from:{'wounded':1,'herb':2.5},into:{'adult':1},chance:3/5,every:10},
-		//],
-		//req:{'medical science':true},
-		//category:'civil',
-		//priority:5,
-	//});
-	
-	
-	
-	//new G.Unit({
-		//name:'metropolis',
-		//desc:'@Provides 15000 housing.<>A city, to house the growing population of your empire. A true monument to the achievements of your people.',
-		//wonder:'metropolis',
-		//icon:[1,14],
-		//wideIcon:[0,14],
-		//cost:{'basic building materials':2000},
-		//costPerStep:{'basic building materials':500,'precious building materials':20},
-		//steps:100,
-		//messageOnStart:'You have begun the contstruction of a metropolis. The first building in a grand city, a tower to mark the origin and center of this place, stands over you, and, as you marvel at its height, the sun sets upon the first day of construction. The first of many, many days.',
-		//finalStepCost:{'precious building materials':300, 'statuette':1, },
-		//finalStepDesc:'As a crown to the metropolis, a small temple is constructed in the heart of the city. An inscription carved upon it reads, "A city made by the people, stands tall, but only in its servitude to the people. As should a ruler."',
-		//use:{'land':1000},
-		//require:{'worker':10,'stone tools':10},
-		//effects:[
-			//{type:'provide',what:{'housing':15000}},
-		//],
-		//req:{'city planning':true},
-		//category:'wonder',
-	//});
+		
+		new G.Tech({
+		name:'deep mining',
+		desc:'@Unlocks [burrower] unit<>People have discorvered better techniques for digging deeper into the earth.',
+		icon:[7,2],
+		cost:{'insight':10},
+		req:{'mining':true},
+	});
+	new G.Unit({
+		name:'burrower',
+		desc:'@digs the soil for [mud] and [stone]<>[digger]s yield various materials that can be used for tool-making and rudimentary construction.',
+		icon:[7,2],
+		cost:{},
+		use:{'worker':1},
+		staff:{'knapped tools':1},
+		upkeep:{'coin':0.1},
+		effects:[
+			{type:'gather',context:'dig',amount:1,max:1},
+			{type:'gather',context:'dig',what:{'clay':5},max:1,req:{'pottery':true}},
+			{type:'gather',what:{'hollow earth':0.5}},
+		],
+		req:{'deep mining':true},
+		category:'production',
+	});
+		new G.Tech({
+		name:'underground housing',
+		desc:'@Unlocks [hollow earth] resource@Unlocks [burrow] unit<>You can now hollow out portions under the earth, and use them to make homes.',
+		icon:[27,7],
+		cost:{'insight':20},
+		req:{'sedentism':true,'deep mining':true,'construction':true},
+	});
+		new G.Res({
+		name:'hollow earth',
+		desc:'Space hollowed out inside the earth, usable for many things once they are researched. If you think that makes no sense, than youre right. I dont care though!//The number on the left is how much space is occupied, while the number on the right is how much space you have in total.',
+		icon:[14,4],
+		displayUsed:true,
+	});
+		new G.Unit({
+		name:'burrow',
+		desc:'@provides 10 [housing]<>A sturdy home built to last.',
+		icon:[21,3],
+		cost:{'basic building materials':75},
+		use:{'hollow earth':1},
+		//require:{'worker':3,'metal tools':3},
+		effects:[
+			{type:'provide',what:{'housing':10}},
+			{type:'waste',chance:0.01/1000}
+		],
+		req:{'underground housing':true},
+		category:'housing',
+	});
 	
 }
 });
