@@ -41,7 +41,7 @@ func:function(){
 		desc:'Resurrects corpses to save space',
 		icon:[],
 		cost:{},
-		req:{'belief in revenants':true,'ressurection':true},
+		req:{'belief in revenants':true,'resurrection':true},
 		use:{'Worker:1},
 		staff:{'stone tools':1},
 		upkeep:{}
@@ -50,8 +50,8 @@ func:function(){
 		],
 	});
 		new G.Tech({
-        name:'ressurection',
-        desc:'Allows you to ressurect corpses.'
+        name:'resurrection',
+        desc:'Allows you to resurrect corpses.'
         icon:[],
         cost:{'Insight':90},
         req:{'monument-building':true},
