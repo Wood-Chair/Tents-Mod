@@ -3,7 +3,7 @@ name:'Vanilla unending',
 author:'Wood Chair',
 desc:'This is just a solution to the endgame problem of not having enough land for housing or graves.',
 engineVersion:1,
-manifest:'ModManifest.js',
+manifest:'modManifest.js',
 requires:['Default dataset*'],
 \\sheets:
 func:function(){
