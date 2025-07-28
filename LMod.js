@@ -105,7 +105,7 @@ func:function()
 		},
 		effects:[
 			{type:'convert',from:{'adult':1},into:{'corpse':1},every:30,mode:'kill'},
-			{type:'convert',from:{'corpse':1},into:{'meat':30,'bone':5},every:1,mode:'cannibal'},
+			{type:'convert',from:{'corpse':1},into:{'meat':30,'bone':5},every:5,mode:'cannibal'},
 		],
 		category:'housing',
 		req:{'murder':true},
@@ -142,7 +142,7 @@ func:function()
 	});
 	new G.Tech({
 		name:'medical science',
-		desc:'@Unlocks [hospital] unit<>So, you have [stone weapons, weapons] now, why not use those on people?',
+		desc:'@Unlocks [hospital] unit<>So, you have [stone weapons, Weapons] now, why not use those on people?',
 		icon:[18,1],
 		cost:{'insight':5},
 		req:{'spears':true},
