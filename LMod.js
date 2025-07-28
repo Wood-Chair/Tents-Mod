@@ -5,7 +5,7 @@ desc:'A mod that adds tents +more!. Disclaimer:"More!" may include cannabalism. 
 engineVersion:1,
 manifest:0,
 requires:['Default dataset*'],
-sheets:{'spicySheet':'img/spicyModIconSheet.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
+sheets:{'spicySheet':'https:wood-chair.github.io/Tents-Mod/Untitled.png'},
 func:function()
 {
 		new G.Unit({
@@ -73,7 +73,7 @@ func:function()
 		desc:'@Unlocks [appeasement] meter@Unlocks [ritualist]<>Your people decide to sacrifice various things in order to appease the gods. Keeping their gods appeased will ease your peoples worries, and may prevent far worse things...',
 		icon:[12,4,23,1],
 		cost:{'insight':15},
-		req:{'belief in a malevolent god':true},
+		req:{'belief in a malevolent pantheon':true},
 	});
 	new G.Unit({
 		name:'ritualist',
@@ -125,67 +125,66 @@ func:function()
 		req:{'murder':true,'cooking':true},
 	});
 	
-	//new G.Unit({
-		//name:'barn',
-		//desc:'@provides 4000 [food storage]<>A large wooden building for storing food. A worker manages the grain to prevent rot.',
-		//icon:[24,4],
-		//cost:{'basic building materials':500},
-		//use:{'land':2},
-		//staff:{'worker':1},
-		//require:{'worker':2,'stone tools':2},
-		//effects:[
-		//	{type:'provide',what:{'added food storage':4000}},
-		//	{type:'waste',chance:0.001/1000}
-		//],
-		//req:{'stockpiling':true,'carpentry':true},
-		//category:'storage',
-	//});
-	//new G.Tech({
-		//name:'medical science',
-		//desc:'@Unlocks [hospital] unit<>So, you have [stone weapons, Weapons] now, why not use those on people?',
-		//icon:[18,1],
-		//cost:{'insight':5},
-		//req:{'spears':true},
-	//});
-	//new G.Unit({
-		//name:'hospital',
-		//desc:'@Heals the [sick] and the [wounded] faster than a [healer] using more complex medicine.<>Hospitals gather workers together to heal and research.',
-		//icon:[23,3],
-		//cost:{'basic building materials':500},
-		//use:{'worker':3},
-		//staff:{'stone tools':3},
-		//upkeep:{'coin':0.2},
-		//effects:[
-			//{type:'convert',from:{'sick':1,'herb':2.5},into:{'adult':1},chance:4/5,every:3},
-			//{type:'convert',from:{'wounded':1,'herb':2.5},into:{'adult':1},chance:3/5,every:10},
-		//],
-		//req:{'medical science':true},
-		//category:'civil',
-		//priority:5,
-	//});
+	new G.Unit({
+		name:'barn',
+		desc:'@provides 4000 [food storage]<>A large wooden building for storing food. A worker manages the grain to prevent rot.',
+		icon:[24,4],
+		cost:{'basic building materials':500},
+		use:{'land':2},
+		staff:{'worker':1},
+		require:{'worker':2,'stone tools':2},
+		effects:[
+			{type:'provide',what:{'added food storage':4000}},
+			{type:'waste',chance:0.001/1000}
+		],
+		req:{'stockpiling':true,'carpentry':true},
+		category:'storage',
+	});
+	new G.Tech({
+		name:'medical science',
+		desc:'@Unlocks [hospital] unit<>So, you have [stone weapons, weapons] now, why not use those on people?',
+		icon:[18,1],
+		cost:{'insight':5},
+		req:{'spears':true},
+	});
+	new G.Unit({
+		name:'hospital',
+		desc:'@Heals the [sick] and the [wounded] faster than a [healer] using more complex medicine.<>Hospitals gather workers together to heal and research.',
+		icon:[23,3],
+		cost:{'basic building materials':500},
+		use:{'worker':3},
+		staff:{'stone tools':3},
+		effects:[
+			{type:'convert',from:{'sick':1,'herb':2.5},into:{'adult':1},chance:4/5,every:3},
+			{type:'convert',from:{'wounded':1,'herb':2.5},into:{'adult':1},chance:3/5,every:10},
+		],
+		req:{'medical science':true},
+		category:'civil',
+		priority:5,
+	});
 	
 	
 	
-	//new G.Unit({
-		//name:'metropolis',
-		//desc:'@Provides 15000 housing.<>A city, to house the growing population of your empire. A true monument to the achievements of your people.',
-		//wonder:'metropolis',
-		//icon:[1,14],
-		//wideIcon:[0,14],
-		//cost:{'basic building materials':2000},
-		//costPerStep:{'basic building materials':500,'precious building materials':20},
-		//steps:100,
-		//messageOnStart:'You have begun the contstruction of a metropolis. The first building in a grand city, a tower to mark the origin and center of this place, stands over you, and, as you marvel at its height, the sun sets upon the first day of construction. The first of many, many days.',
-		//finalStepCost:{'precious building materials':300, 'statuette':1, },
-		//finalStepDesc:'As a crown to the metropolis, a small temple is constructed in the heart of the city. An inscription carved upon it reads, "A city made by the people, stands tall, but only in its servitude to the people. As should a ruler."',
-		//use:{'land':1000},
-		//require:{'worker':10,'stone tools':10},
-		//effects:[
-			//{type:'provide',what:{'housing':15000}},
-		//],
-		//req:{'city planning':true},
-		//category:'wonder',
-	//});
+	new G.Unit({
+		name:'metropolis',
+		desc:'@Provides 15000 housing.<>A city, to house the growing population of your empire. A true monument to the achievements of your people.',
+		wonder:'metropolis',
+		icon:[1,14],
+		wideIcon:[0,14],
+		cost:{'basic building materials':2000},
+		costPerStep:{'basic building materials':500,'precious building materials':20},
+		steps:100,
+		messageOnStart:'You have begun the contstruction of a metropolis. The first building in a grand city, a tower to mark the origin and center of this place, stands over you, and as you marvel at its height, the sun sets upon the first day of construction. The first of many, many days.',
+		finalStepCost:{'precious building materials':300, 'statuette':1, },
+		finalStepDesc:'As a crown to the metropolis, a small temple is constructed in the heart of the city. An inscription carved upon it reads, "A city made by the people stands tall, but only in its servitude to the people. As should a ruler."',
+		use:{'land':1000},
+		require:{'worker':10,'stone tools':10},
+		effects:[
+			{type:'provide',what:{'housing':15000}},
+		],
+		req:{'city planning':true},
+		category:'wonder',
+	});
 	
 }
 });
