@@ -5,7 +5,7 @@ desc:'Tents.',
 engineVersion:1,
 manifest:0,
 requires:['Default dataset*'],
-sheets:{'spicySheet':'img/spicyModIconSheet.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
+sheets:{'spicySheet':'https://wood-chair.github.io/Tents-Mod/Untitled.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
 func:function()
 {
 		new G.Unit({
